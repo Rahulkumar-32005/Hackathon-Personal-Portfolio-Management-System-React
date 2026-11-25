@@ -1,0 +1,1420 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #080b12;
+  color: #f1f5f9;
+  font-family: Arial, sans-serif;
+}
+
+.admin-layout * {
+  box-sizing: border-box;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.admin-sidebar {
+  width: 250px;
+  min-width: 250px;
+  background: #101622;
+  border-right: 1px solid #263244;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-brand {
+  padding: 0 10px 30px;
+  border-bottom: 1px solid #263244;
+}
+
+.admin-brand h2 {
+  font-size: 21px;
+  margin: 0 0 8px;
+}
+
+.admin-brand span {
+  color: #8291a8;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.admin-sidebar nav button,
+.admin-logout {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #aab6c8;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-sidebar nav button:hover,
+.admin-sidebar nav button.active {
+  background: #1d2a40;
+  color: #60a5fa;
+}
+
+.admin-logout {
+  margin-top: auto;
+  color: #fb7185;
+}
+
+/* =====================================
+   MAIN
+===================================== */
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #263244;
+}
+
+.admin-header h1 {
+  margin: 0 0 8px;
+  font-size: 27px;
+}
+
+.admin-header p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.admin-account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #2563eb;
+  font-weight: bold;
+}
+
+.admin-account strong,
+.admin-account small {
+  display: block;
+}
+
+.admin-account small {
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+/* =====================================
+   OVERVIEW
+===================================== */
+
+.admin-welcome {
+  margin: 30px 0;
+}
+
+.admin-welcome h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.admin-welcome p {
+  color: #94a3b8;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.admin-stat {
+  background: #111b2b;
+  border: 1px solid #26364d;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.admin-stat span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.admin-stat h2 {
+  font-size: 30px;
+  margin: 14px 0 7px;
+  color: #60a5fa;
+}
+
+.admin-stat small {
+  color: #8291a8;
+}
+
+/* =====================================
+   PANEL
+===================================== */
+
+.admin-panel {
+  position: relative;
+  background: #111b2b;
+  border: 1px solid #26364d;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.admin-panel h2 {
+  font-size: 19px;
+  margin: 0 0 20px;
+}
+
+.admin-panel-heading,
+.admin-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.admin-panel-heading h2,
+.admin-section-heading h2 {
+  margin: 0 0 7px;
+}
+
+.admin-panel-heading p,
+.admin-section-heading p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin: 0;
+}
+
+.admin-panel-heading > span {
+  color: #60a5fa;
+  font-size: 13px;
+}
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.admin-search {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 5px 0 22px;
+  border: 1px solid #334155;
+  border-radius: 9px;
+  outline: none;
+  background: #080f1c;
+  color: white;
+  font-size: 13px;
+}
+
+.admin-search:focus {
+  border-color: #3b82f6;
+}
+
+/* =====================================
+   USER CARDS
+===================================== */
+
+.admin-users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 17px;
+}
+
+.admin-user-card {
+  background: #0c1421;
+  border: 1px solid #293a52;
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.2s;
+}
+
+.admin-user-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-3px);
+}
+
+.admin-user-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.admin-user-photo,
+.admin-large-avatar {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1e3a5f;
+  color: #93c5fd;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.admin-user-photo img,
+.admin-large-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-user-card h3 {
+  margin: 0 0 7px;
+  font-size: 15px;
+}
+
+.admin-user-card p {
+  color: #94a3b8;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  margin: 0 0 9px;
+}
+
+.admin-role {
+  display: inline-block;
+  color: #60a5fa;
+  background: #172d4b;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.admin-user-open {
+  width: 100%;
+  padding: 12px;
+  background: #172d4b;
+  color: #93c5fd;
+  border: 1px solid #294a73;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-user-open:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+/* =====================================
+   USER DETAIL PAGE
+===================================== */
+
+.admin-detail-page {
+  margin-top: 25px;
+}
+
+.admin-back-btn {
+  background: transparent;
+  color: #93c5fd;
+  border: none;
+  padding: 10px 0;
+  margin-bottom: 18px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.admin-profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(120deg, #14243c, #111b2b);
+  border: 1px solid #30445f;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.admin-profile-banner .admin-large-avatar {
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+  font-size: 30px;
+}
+
+.admin-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-profile-info h2 {
+  font-size: 22px;
+  margin: 0 0 7px;
+}
+
+.admin-profile-info p {
+  color: #94a3b8;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  margin: 0 0 12px;
+}
+
+/* =====================================
+   TABS
+===================================== */
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+  border-bottom: 1px solid #26364d;
+}
+
+.admin-tabs button {
+  padding: 13px 17px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.admin-tabs button:hover,
+.admin-tabs button.active {
+  color: #60a5fa;
+  border-bottom-color: #3b82f6;
+}
+
+/* =====================================
+   PROFILE
+===================================== */
+
+.admin-profile-panel {
+  margin-top: 0;
+}
+
+.admin-photo-management {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #263244;
+}
+
+.admin-photo-management .admin-large-avatar {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+}
+
+.admin-photo-management h3 {
+  margin: 0 0 7px;
+}
+
+.admin-photo-management p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.admin-upload-btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: #1d4ed8;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.admin-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.admin-info-grid > div {
+  padding: 17px;
+  border: 1px solid #293a52;
+  background: #0c1421;
+  border-radius: 9px;
+  min-width: 0;
+}
+
+.admin-info-grid span,
+.admin-info-grid strong {
+  display: block;
+}
+
+.admin-info-grid span {
+  color: #94a3b8;
+  font-size: 12px;
+  margin-bottom: 9px;
+}
+
+.admin-info-grid strong {
+  color: #e2e8f0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.admin-edit-form {
+  display: grid;
+  gap: 12px;
+  max-width: 550px;
+}
+
+.admin-edit-form label {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.admin-edit-form input,
+.admin-edit-modal input,
+.admin-edit-modal textarea,
+.admin-edit-modal select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #080f1c;
+  color: white;
+  outline: none;
+}
+
+.admin-edit-form input:focus,
+.admin-edit-modal input:focus,
+.admin-edit-modal textarea:focus {
+  border-color: #3b82f6;
+}
+
+/* =====================================
+   DETAIL ITEMS
+===================================== */
+
+.admin-detail-items {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 17px;
+  border: 1px solid #293a52;
+  border-radius: 10px;
+  background: #0c1421;
+}
+
+.admin-detail-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-detail-item h3 {
+  font-size: 15px;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.admin-detail-item p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin: 0 0 9px;
+}
+
+.admin-detail-item small {
+  color: #60a5fa;
+  font-size: 12px;
+}
+
+.admin-certificate-thumb {
+  width: 105px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid #334155;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-view-btn,
+.admin-delete-btn {
+  border: none;
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-view-btn {
+  background: #1d4ed8;
+  color: white;
+}
+
+.admin-delete-btn {
+  background: #451d2a;
+  color: #fda4af;
+}
+
+.admin-view-btn:hover {
+  background: #2563eb;
+}
+
+.admin-delete-btn:hover {
+  background: #7f1d1d;
+  color: white;
+}
+
+/* =====================================
+   ACTIVITY
+===================================== */
+
+.admin-activity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid #263244;
+}
+
+.admin-activity-row strong {
+  font-size: 13px;
+}
+
+.admin-activity-row small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =====================================
+   GLOBAL ITEMS
+===================================== */
+
+.admin-item {
+  padding: 17px;
+  border: 1px solid #26364d;
+  border-radius: 9px;
+  background: #0c1421;
+  margin-bottom: 12px;
+}
+
+.admin-item h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.admin-item p {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.admin-item small {
+  color: #60a5fa;
+}
+
+/* =====================================
+   EMPTY
+===================================== */
+
+.admin-empty {
+  color: #94a3b8;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* =====================================
+   MODALS
+===================================== */
+
+.admin-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+}
+
+.admin-edit-modal,
+.admin-certificate-preview-modal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #111b2b;
+  display: grid;
+  gap: 13px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-edit-modal h2 {
+  margin: 0 0 12px;
+}
+
+.admin-edit-modal label {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.admin-edit-modal textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.admin-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.admin-modal-image-preview {
+  max-width: 180px;
+  max-height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.admin-certificate-preview-modal h2 {
+  margin: 0 0 12px;
+}
+
+.admin-certificate-preview-modal img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 850px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+  }
+
+  .admin-sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+
+  .admin-sidebar nav button {
+    padding: 10px;
+  }
+
+  .admin-logout {
+    margin-top: 15px;
+  }
+
+  .admin-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-profile-banner {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .admin-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-detail-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .admin-actions {
+    width: 100%;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-photo-management {
+    align-items: flex-start;
+  }
+}
+/* =====================================
+   CLICKABLE OVERVIEW CARDS
+===================================== */
+
+.admin-stat-clickable {
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.admin-stat-clickable:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+  background: #14243c;
+}
+
+.admin-stat-clickable:active {
+  transform: scale(0.98);
+}
+
+.admin-stat-clickable:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+.admin-stat-clickable small {
+  color: #60a5fa;
+  transition: 0.2s;
+}
+
+/* =====================================
+   CLICKABLE USER PROFILE COUNTS
+===================================== */
+
+.admin-info-grid .admin-clickable-info {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.admin-info-grid .admin-clickable-info:hover {
+  border-color: #3b82f6;
+  background: #14243c;
+  transform: translateY(-3px);
+}
+
+.admin-info-grid .admin-clickable-info:active {
+  transform: scale(0.98);
+}
+.admin-clickable-info {
+  cursor: pointer;
+}
+
+.admin-clickable-info:hover span,
+.admin-clickable-info:hover strong {
+  color: #60a5fa;
+}/* =====================================
+   ADMIN MULTI-THEME SUPPORT
+   Add at the END of admin.css
+===================================== */
+
+:root {
+  --admin-accent: var(--theme-accent, #0d9488);
+}
+
+:root[data-theme="light"],
+:root[data-theme="red"],
+:root[data-theme="blue"],
+:root[data-theme="green"],
+:root[data-theme="purple"],
+:root[data-theme="yellow"],
+:root[data-theme="custom"] {
+  --admin-bg: #f5f7fb;
+  --admin-sidebar: #ffffff;
+  --admin-card: #ffffff;
+  --admin-input: #f8fafc;
+  --admin-text: #172033;
+  --admin-muted: #657189;
+  --admin-border: #e1e6ef;
+  --admin-soft: color-mix(in srgb, var(--admin-accent) 11%, white);
+  --admin-hover: color-mix(in srgb, var(--admin-accent) 8%, white);
+}
+
+:root[data-theme="dark"] {
+  --admin-bg: #080b12;
+  --admin-sidebar: #101622;
+  --admin-card: #111b2b;
+  --admin-input: #080f1c;
+  --admin-text: #f1f5f9;
+  --admin-muted: #94a3b8;
+  --admin-border: #26364d;
+  --admin-soft: #172d4b;
+  --admin-hover: #1d2a40;
+}
+
+/* =====================================
+   MAIN LAYOUT
+===================================== */
+
+.admin-layout {
+  background: var(--admin-bg) !important;
+  color: var(--admin-text) !important;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.admin-sidebar {
+  background: var(--admin-sidebar) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-brand {
+  border-color: var(--admin-border) !important;
+}
+
+.admin-brand h2 {
+  color: var(--admin-text) !important;
+}
+
+.admin-brand span {
+  color: var(--admin-muted) !important;
+}
+
+.admin-sidebar nav button {
+  color: var(--admin-muted) !important;
+}
+
+.admin-sidebar nav button:hover,
+.admin-sidebar nav button.active {
+  background: var(--admin-soft) !important;
+  color: var(--admin-accent) !important;
+}
+
+.admin-logout {
+  color: #dc3545 !important;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.admin-header {
+  border-color: var(--admin-border) !important;
+}
+
+.admin-header h1,
+.admin-account strong {
+  color: var(--admin-text) !important;
+}
+
+.admin-header p,
+.admin-account small {
+  color: var(--admin-muted) !important;
+}
+
+.admin-avatar {
+  background: var(--admin-accent) !important;
+  color: white !important;
+}
+
+/* =====================================
+   WELCOME SECTION
+===================================== */
+
+.admin-welcome h2 {
+  color: var(--admin-text) !important;
+}
+
+.admin-welcome p {
+  color: var(--admin-muted) !important;
+}
+
+/* =====================================
+   STATISTICS CARDS
+===================================== */
+
+.admin-stat {
+  background: var(--admin-card) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-stat span,
+.admin-stat small {
+  color: var(--admin-muted) !important;
+}
+
+.admin-stat h2 {
+  color: var(--admin-accent) !important;
+}
+
+.admin-stat-clickable:hover {
+  background: var(--admin-hover) !important;
+  border-color: var(--admin-accent) !important;
+}
+
+.admin-stat-clickable small {
+  color: var(--admin-accent) !important;
+}
+
+/* =====================================
+   PANELS
+===================================== */
+
+.admin-panel {
+  background: var(--admin-card) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-panel h2,
+.admin-panel h3,
+.admin-section-heading h2,
+.admin-panel-heading h2 {
+  color: var(--admin-text) !important;
+}
+
+.admin-panel-heading p,
+.admin-section-heading p {
+  color: var(--admin-muted) !important;
+}
+
+.admin-panel-heading > span {
+  color: var(--admin-accent) !important;
+}
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.admin-search {
+  background: var(--admin-input) !important;
+  color: var(--admin-text) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-search::placeholder {
+  color: var(--admin-muted) !important;
+}
+
+.admin-search:focus {
+  border-color: var(--admin-accent) !important;
+}
+
+/* =====================================
+   USER CARDS
+===================================== */
+
+.admin-user-card {
+  background: var(--admin-card) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-user-card:hover {
+  border-color: var(--admin-accent) !important;
+}
+
+.admin-user-card h3 {
+  color: var(--admin-text) !important;
+}
+
+.admin-user-card p {
+  color: var(--admin-muted) !important;
+}
+
+.admin-user-photo,
+.admin-large-avatar {
+  background: var(--admin-soft) !important;
+  color: var(--admin-accent) !important;
+}
+
+.admin-role {
+  background: var(--admin-soft) !important;
+  color: var(--admin-accent) !important;
+}
+
+.admin-user-open {
+  background: var(--admin-soft) !important;
+  color: var(--admin-accent) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-user-open:hover {
+  background: var(--admin-accent) !important;
+  color: white !important;
+}
+
+/* =====================================
+   USER DETAIL PAGE
+===================================== */
+
+.admin-back-btn {
+  color: var(--admin-accent) !important;
+}
+
+.admin-profile-banner {
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--admin-accent) 13%, var(--admin-card)),
+    var(--admin-card)
+  ) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-profile-info h2 {
+  color: var(--admin-text) !important;
+}
+
+.admin-profile-info p {
+  color: var(--admin-muted) !important;
+}
+
+/* =====================================
+   TABS
+===================================== */
+
+.admin-tabs {
+  border-color: var(--admin-border) !important;
+}
+
+.admin-tabs button {
+  color: var(--admin-muted) !important;
+}
+
+.admin-tabs button:hover,
+.admin-tabs button.active {
+  color: var(--admin-accent) !important;
+  border-bottom-color: var(--admin-accent) !important;
+}
+
+/* =====================================
+   PROFILE
+===================================== */
+
+.admin-photo-management {
+  border-color: var(--admin-border) !important;
+}
+
+.admin-photo-management h3 {
+  color: var(--admin-text) !important;
+}
+
+.admin-photo-management p {
+  color: var(--admin-muted) !important;
+}
+
+.admin-info-grid > div {
+  background: var(--admin-card) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-info-grid span {
+  color: var(--admin-muted) !important;
+}
+
+.admin-info-grid strong {
+  color: var(--admin-text) !important;
+}
+
+.admin-info-grid .admin-clickable-info:hover {
+  background: var(--admin-hover) !important;
+  border-color: var(--admin-accent) !important;
+}
+
+.admin-clickable-info:hover span,
+.admin-clickable-info:hover strong {
+  color: var(--admin-accent) !important;
+}
+
+/* =====================================
+   INPUTS AND EDIT FORMS
+===================================== */
+
+.admin-edit-form label,
+.admin-edit-modal label {
+  color: var(--admin-text) !important;
+}
+
+.admin-edit-form input,
+.admin-edit-modal input,
+.admin-edit-modal textarea,
+.admin-edit-modal select {
+  background: var(--admin-input) !important;
+  color: var(--admin-text) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-edit-form input:focus,
+.admin-edit-modal input:focus,
+.admin-edit-modal textarea:focus {
+  border-color: var(--admin-accent) !important;
+}
+
+.admin-edit-form input::placeholder,
+.admin-edit-modal input::placeholder,
+.admin-edit-modal textarea::placeholder {
+  color: var(--admin-muted) !important;
+}
+
+/* =====================================
+   DETAIL ITEMS
+===================================== */
+
+.admin-detail-item,
+.admin-item {
+  background: var(--admin-card) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-detail-item h3,
+.admin-item h3 {
+  color: var(--admin-text) !important;
+}
+
+.admin-detail-item p,
+.admin-item p {
+  color: var(--admin-muted) !important;
+}
+
+.admin-detail-item small,
+.admin-item small {
+  color: var(--admin-accent) !important;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.admin-view-btn,
+.admin-upload-btn {
+  background: var(--admin-accent) !important;
+  color: white !important;
+}
+
+.admin-view-btn:hover {
+  filter: brightness(0.9);
+}
+
+.admin-delete-btn {
+  background: #dc3545 !important;
+  color: white !important;
+}
+
+/* =====================================
+   ACTIVITY
+===================================== */
+
+.admin-activity-row {
+  border-color: var(--admin-border) !important;
+}
+
+.admin-activity-row strong {
+  color: var(--admin-text) !important;
+}
+
+.admin-activity-row small {
+  color: var(--admin-muted) !important;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.admin-empty {
+  color: var(--admin-muted) !important;
+}
+
+/* =====================================
+   MODALS
+===================================== */
+
+.admin-modal-backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.admin-edit-modal,
+.admin-certificate-preview-modal {
+  background: var(--admin-card) !important;
+  border-color: var(--admin-border) !important;
+}
+
+.admin-edit-modal h2,
+.admin-certificate-preview-modal h2 {
+  color: var(--admin-text) !important;
+}
+
+.admin-modal-close {
+  color: var(--admin-text) !important;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 850px) {
+  .admin-sidebar {
+    border-right: none !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+  }
+}/* =====================================
+   GLOBAL TEXT COLOUR THEME FIX
+===================================== */
+
+/* USER DASHBOARD */
+
+.dash,
+.dash * {
+  color: var(--dash-text);
+}
+
+.dash p,
+.dash small,
+.dash label,
+.dash span {
+  color: var(--dash-muted);
+}
+
+.dash h1,
+.dash h2,
+.dash h3,
+.dash h4,
+.dash strong {
+  color: var(--dash-text);
+}
+
+.dash aside nav button.active,
+.dash .panel h2,
+.dash .statgrid .panel h2,
+.dash .item small {
+  color: var(--dash-accent) !important;
+}
+
+.dash button {
+  color: inherit;
+}
+
+.dash .dashboard-form button,
+.dash .edit-btn,
+.dash .danger-btn,
+.dash .view-certificate-btn {
+  color: #ffffff !important;
+}
+
+.dash input,
+.dash textarea,
+.dash select {
+  color: var(--dash-text) !important;
+}
+
+.dash .certificate-modal-close {
+  color: var(--dash-text) !important;
+}
+
+/* ADMIN DASHBOARD */
+
+.admin-layout,
+.admin-layout * {
+  color: var(--admin-text);
+}
+
+.admin-layout p,
+.admin-layout small,
+.admin-layout label {
+  color: var(--admin-muted);
+}
+
+.admin-layout h1,
+.admin-layout h2,
+.admin-layout h3,
+.admin-layout h4,
+.admin-layout strong {
+  color: var(--admin-text);
+}
+
+.admin-layout .admin-tabs button.active,
+.admin-layout .admin-panel-heading > span,
+.admin-layout .admin-detail-item small,
+.admin-layout .admin-item small {
+  color: var(--admin-accent) !important;
+}
+
+/* BUTTON TEXT */
+
+.admin-layout .admin-view-btn,
+.admin-layout .admin-upload-btn,
+.admin-layout .admin-delete-btn,
+.admin-layout .admin-user-open {
+  color: #ffffff !important;
+}
+
+/* INPUT TEXT */
+
+.admin-layout input,
+.admin-layout textarea,
+.admin-layout select {
+  color: var(--admin-text) !important;
+}
+
+/* ROLE BADGES */
+
+.admin-layout .admin-role {
+  color: var(--admin-accent) !important;
+}
+
+/* KEEP DELETE TEXT VISIBLE */
+
+.admin-layout .admin-delete-btn {
+  background: #dc3545 !important;
+  color: white !important;
+}
